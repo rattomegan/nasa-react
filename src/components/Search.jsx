@@ -1,27 +1,33 @@
 import { useState, useEffect } from 'react';
 import NavBar from './NavBar';
 
-// import apiKey from env file
-const apiKey = process.env.REACT_APP_NASA_KEY;
+const apiKey = process.env.REACT_APP_NASA_KEY; 
 
-const NasaPhoto = () => {
+const Search = () => {
   const [photoData, setPhotoData] = useState(null);
+  const [searchDate, setSearchDate] = useState('');
 
-  useEffect(() => {
-    fetchPhoto();
+  async function fetchPhoto() {
+    const data = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${searchDate}`)
+    .then(res => res.json());
 
-    async function fetchPhoto() {
-      const data = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}`)
-      .then(res => res.json());
-      
+    setPhotoData(data);
+    console.log(searchDate)
+  }
 
-      setPhotoData(data);
-    }
-  }, []);
 
   return (
-    <>
-      <NavBar />
+    <div>
+      <div>
+        <input 
+          type='date'
+          name='date'
+          value={searchDate}
+          onChange={e => setSearchDate(e.target.value)}>
+        </input>
+        <button onClick={fetchPhoto}>Search</button>
+      </div>
+
       {
         !photoData ?
           <div></div>
@@ -52,9 +58,9 @@ const NasaPhoto = () => {
 
           </div>
       }
-    </>
 
+    </div>
   )
 }
 
-export default NasaPhoto
+export default Search
