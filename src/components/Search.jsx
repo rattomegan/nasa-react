@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import NavBar from './NavBar';
+import { useState } from 'react';
+import Photo from './Photo';
 
 const apiKey = process.env.REACT_APP_NASA_KEY; 
 
@@ -12,7 +12,6 @@ const Search = () => {
     .then(res => res.json());
 
     setPhotoData(data);
-    console.log(searchDate)
   }
 
 
@@ -28,37 +27,7 @@ const Search = () => {
         <button onClick={fetchPhoto}>Search</button>
       </div>
 
-      {
-        !photoData ?
-          <div></div>
-        :
-          <div>
-            {photoData.media_type === 'image' ?
-              <img
-                src={photoData.url}
-                alt={photoData.title}
-              /> 
-            : 
-              <iframe 
-                title='space-video'
-                src={photoData.url}
-                frameBorder='0'
-                gesture='media'
-                allow='encryped-media'
-                allowFullScreen
-                className='photo'
-              />
-            }
-   
-            <div>
-              <h1>{photoData.title}</h1>
-              <p>{photoData.date}</p>
-              <p>{photoData.explanation}</p>
-            </div>
-
-          </div>
-      }
-
+     <Photo photoData={photoData} />
     </div>
   )
 }

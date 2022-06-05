@@ -2,21 +2,23 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
-import NasaPhoto from './components/NasaPhoto';
+import TodaysPhoto from './components/TodaysPhoto';
 import Search from './components/Search';
+import NavBar from './components/NavBar';
 
 
 
 function App() {
   return (
-    <main className='App'>
+    <div className='App'>
+      <NavBar />
       <Routes>
           {/* exact ensures our home route is not affected by our other routes. no other / will be confused with our home route. */}
           <Route element={<Home />} path='/' exact />
-          <Route element={<NasaPhoto />} path='/nasaphoto' />
+          <Route element={<TodaysPhoto />} path='/today' />
           <Route element={<Search />} path='/search' />
       </Routes>
-    </main>
+    </div>
   );
 }
 

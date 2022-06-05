@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const Home = () => {
   return (
     <div>
-      <Link to='/nasaphoto'>See into the stars!</Link>
+      <Link to='/today'>Enter the stars!</Link>
     </div>
   )
 }
