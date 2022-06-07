@@ -5,13 +5,18 @@ const Photo = ({ photoData }) => {
       !photoData ?
         <div></div>
       :
-        <div>
+        <div className='data-container'>
           {photoData.media_type === 'image' ?
-            <img
-              src={photoData.url}
-              alt={photoData.title}
-            /> 
+            <div className='photo-container'>
+              <img
+                className='photo'
+                src={photoData.url}
+                alt={photoData.title}
+              /> 
+            </div>
+
           : 
+          <div>
             <iframe 
               title='space-video'
               src={photoData.url}
@@ -21,9 +26,11 @@ const Photo = ({ photoData }) => {
               allowFullScreen
               className='photo'
             />
+          </div>
+
           }
  
-          <div>
+          <div className='data-text'>
             <h1>{photoData.title}</h1>
             <p>{photoData.date}</p>
             <p>{photoData.explanation}</p>

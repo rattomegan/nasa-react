@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 2rem;
+  background: center/cover url('https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=893&q=80') no-repeat;
+}
+
+.App {
+  min-height: 100vh;
+
+}
+
+/* -------Nav Bar------------ */
+
+.navbar {
+  height: 6rem;
+  /* background-color: rgba(51, 51, 51, 0.4); */
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.navlist {
+  /* padding-top: 1rem; */
+  list-style: none;
+  display: flex;
+  gap: 1.6rem;
+
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1.6rem;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  color: inherit;
+  padding: 0.4rem 0.4rem;
+}
+
+nav a:hover {
+  /* color: #333; */
+  /* background-color: #fff;
+  border-radius: 5px; */
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  /* border-style: inset; */
+}
+
+nav .active {
+  /* text-decoration: overline white; */
+  border-top: 1px solid white;
+  /* border-top: 2px solid white; */
+  pointer-events: none;
+}
+
+
+/* ------------ Home Page --------------- */
+.homeButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  min-height: 80vh;
+}
+
+.homeButton Link {
+  background-color: black;
+}
+
+.homeLink {
+  display: inline-block;
+  font-size: 3.8rem;
+  color: #fff;
+  font-weight: 700;
+  padding: 2rem 6rem;
+  border: 1px solid #fff;
+  background-color: black;
+}
+
+.homeLink:hover {
+  transform: translate(10px, -20px);
+  box-shadow: -10px 20px 0 yellow;
+  
+}
+
+
+/* -------- Photo Component --------- */
+
+.data-container {
+  max-width: 96rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.photo-container {
+  flex: 1;
+  max-width: 49rem;
+}
+
+.photo {
+  max-width: 100%;
+}
+
+.data-text{
+  font-size: 1.6rem;
+  flex: 1;
+}
+
+.data-text h1 {
+  font-size: 2.6rem;
+  font-weight: 400;
+}
