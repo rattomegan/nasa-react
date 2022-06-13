@@ -3,7 +3,7 @@ const Photo = ({ photoData }) => {
     <>
     {
       !photoData ?
-        <div></div>
+        <div>Loading...</div>
       :
         <div className='data-container'>
           {photoData.media_type === 'image' ?
