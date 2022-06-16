@@ -7,7 +7,7 @@ const Photo = ({ photoData }) => {
       :
         <div className='data-container'>
           {photoData.media_type === 'image' ?
-            <div className='photo-container'>
+            <div className='data-photo'>
               <img
                 className='photo'
                 src={photoData.url}
@@ -16,17 +16,17 @@ const Photo = ({ photoData }) => {
             </div>
 
           : 
-          <div>
-            <iframe 
-              title='space-video'
-              src={photoData.url}
-              frameBorder='0'
-              gesture='media'
-              allow='encryped-media'
-              allowFullScreen
-              className='photo'
-            />
-          </div>
+            <div>
+              <iframe 
+                title='space-video'
+                src={photoData.url}
+                frameBorder='0'
+                gesture='media'
+                allow='encryped-media'
+                allowFullScreen
+                className='data-photo'
+              />
+            </div>
 
           }
  
